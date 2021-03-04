@@ -7,6 +7,8 @@ use Faker\Generator as Faker;
 
 $factory->define(Catogery::class, function (Faker $faker) {
     return [
-        //
+        'product_id'=>$faker->numberBetween(1,1500),
+        'slug'=>$faker->slug(),
+        'name'=>$faker->word()
     ];
 });

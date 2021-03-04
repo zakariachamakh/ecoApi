@@ -7,6 +7,8 @@ use Faker\Generator as Faker;
 
 $factory->define(Shipment::class, function (Faker $faker) {
     return [
-        //
+        'order_id'=>$faker->numberBetween(1,1500),
+        'user_id'=>$faker->numberBetween(1,1500),
+        'status'=>$faker->word()
     ];
 });
