@@ -13,6 +13,6 @@ $factory->define(Refund::class, function (Faker $faker) {
         'reason'=>$faker->text(),
         'date_refund'=>$faker->date(),
         'amount'=>$faker->numberBetween(),
-        'status'=>$faker->randomElements(['accepte','canlce','done','failed']),
+        'status'=>$faker->word(),
         ];
 });
