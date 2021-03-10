@@ -17,7 +17,7 @@ class CreateCatogeriesTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('slug');
-            $table->foreignId('product_id')->constrained();
+            $table->foreignId('product_id')->unique()->constrained();
             $table->timestamps();
         });
     }

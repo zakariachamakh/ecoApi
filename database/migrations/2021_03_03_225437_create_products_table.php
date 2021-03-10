@@ -23,7 +23,7 @@ class CreateProductsTable extends Migration
             $table->double('price_sale');
             $table->double('stock');
             $table->string('stock_status')->default('instock');
-            $table->foreignId('cart_item_id')->constrained();
+            $table->foreignId('cart_item_id')->nullable()->constrained();
             $table->timestamps();
         });
     }

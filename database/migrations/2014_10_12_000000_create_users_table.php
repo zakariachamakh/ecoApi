@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->unsignedBigInteger('billing_address');
             $table->unsignedBigInteger('shipping_address');
+            $table->string('api_token',60);
             $table->rememberToken();
             $table->timestamps();
         });

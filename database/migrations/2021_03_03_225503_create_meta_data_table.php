@@ -15,8 +15,8 @@ class CreateMetaDataTable extends Migration
     {
         Schema::create('meta_data', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('product_id')->constrained();
-            $table->foreignId('user_id')->constrained();
+            $table->foreignId('product_id')->nullable()->constrained();
+            $table->foreignId('user_id')->nullable()->constrained();
             $table->string('key');
             $table->string('value');
             $table->timestamps();

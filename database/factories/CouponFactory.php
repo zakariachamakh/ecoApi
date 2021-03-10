@@ -9,7 +9,7 @@ $factory->define(Coupon::class, function (Faker $faker) {
     return [
         'code'=>$faker->word(),
         'slug'=>$faker->slug(),
-        'permalink'=>$faker->sentence(5),
+        'permalink'=>$faker->url,
         'amount'=>$faker->numberBetween(),
         'discount_type'=>$faker->word(),
         'description'=>$faker->sentence(5),

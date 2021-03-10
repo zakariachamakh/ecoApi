@@ -6,6 +6,9 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
+/**
+ * @method static find($id)
+ */
 class User extends Authenticatable
 {
     use Notifiable;
@@ -18,7 +21,7 @@ class User extends Authenticatable
     protected $fillable = [
         'first_name', 'last_name', 'email',
         'phone', 'email_verified', 'phone_verified',
-        'password', 'billing_address', 'shipping_address',
+        'password', 'billing_address', 'shipping_address','api_token'
     ];
 
     /**
@@ -36,11 +39,11 @@ class User extends Authenticatable
     }
 
     public  function billingAddress(){
-        return $this->hasMany(Address::class,'id','billing_address');
+        return $this->hasOne(Address::class,'id','billing_address');
     }
 
     public  function shippingAddress(){
-        return $this->hasMany(Address::class,'id','shipping_address');
+        return $this->hasOne(Address::class,'id','shipping_address');
     }
 
     public function carts(){
@@ -56,7 +59,7 @@ class User extends Authenticatable
     }
 
     public  function images(){
-        return $this->hasMany(Image::class);
+        return $this->hasOne(Image::class);
     }
 
     public function metaData(){

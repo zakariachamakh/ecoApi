@@ -20,8 +20,6 @@ class DatabaseSeeder extends Seeder
         factory(\App\Coupon::class,1500)->create();
         factory(\App\Image::class,1500)->create();
         factory(\App\MetaData::class,1500)->create();
-
-
       factory(\App\Order::class,1500)->create();
         factory(\App\Payment::class,1500)->create();
         factory(\App\ProductDimension::class,1500)->create();
