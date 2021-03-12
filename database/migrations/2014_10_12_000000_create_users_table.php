@@ -18,14 +18,14 @@ class CreateUsersTable extends Migration
             $table->string('first_name');
             $table->string('last_name');
             $table->string('email')->unique();
-            $table->string('phone')->unique();
+            $table->string('phone')->nullable()->unique();
             $table->boolean('email_verified')->default('0');
             $table->boolean('phone_verified')->default('0');
             $table->string('password');
-            $table->unsignedBigInteger('billing_address');
-            $table->unsignedBigInteger('shipping_address');
+            $table->unsignedBigInteger('billing_address')->nullable();
+            $table->unsignedBigInteger('shipping_address')->nullable();
             $table->string('api_token',60);
-            $table->rememberToken();
+            $table->rememberToken()->nullable();
             $table->timestamps();
         });
     }
