@@ -30,6 +30,7 @@ Route::get('/products/{product}', 'Api\ProductController@show');
 Route::get('/user/{id}', 'Api\UserController@show');
 Route::get('/full-user/{id}', 'Api\UserController@full_show');
 Route::get('/user-payment/{id}', 'Api\UserController@userpayemnt');
+Route::post('/auth/register', 'Api\UserController@register');
 Route::get('/coupons/{coupon}', 'Api\CouponController@show');
 Route::get('/cart-item/{id}', 'Api\CartitemController@show');
 Route::get('/cart-item/{id}', 'Api\CartitemController@show');
